@@ -1,0 +1,1 @@
+alert("Initialization terminated.");
