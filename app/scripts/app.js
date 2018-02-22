@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name backofficeProxijobApp
+ * @name backOfficeProxiJobApp
  * @description
- * # backofficeProxijobApp
+ * # backOfficeProxiJobApp
  *
  * Main module of the application.
  */
 angular
-  .module('backofficeProxijobApp', [
+  .module('backOfficeProxiJobApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

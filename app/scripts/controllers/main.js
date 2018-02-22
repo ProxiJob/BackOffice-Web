@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name backofficeProxijobApp.controller:MainCtrl
+ * @name backOfficeProxiJobApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the backofficeProxijobApp
+ * Controller of the backOfficeProxiJobApp
  */
-angular.module('backofficeProxijobApp')
+angular.module('backOfficeProxiJobApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

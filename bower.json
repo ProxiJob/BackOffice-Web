@@ -1,5 +1,5 @@
 {
-  "name": "backoffice-proxijob",
+  "name": "back-office-proxi-job",
   "version": "0.0.0",
   "dependencies": {
     "angular": "^1.4.0",
@@ -15,7 +15,7 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "backofficeProxijobApp",
+  "moduleName": "backOfficeProxiJobApp",
   "overrides": {
     "bootstrap": {
       "main": [
