@@ -10,6 +10,7 @@ const path = require('path')
 const url = require('url')
 
 const ipc = require('electron').ipcMain
+require('jquery');
 
 require('electron-reload')(__dirname);
 
@@ -19,7 +20,7 @@ let mainWindow
 
 function createWindow() {
 	// Create the browser window.
-	mainWindow = new BrowserWindow({ width: 800, height: 600 })
+	mainWindow = new BrowserWindow({ width: 1920, height: 1080, minWidth: 1280, minHeight: 720 })
 
 	// and load the index.html of the app.
 	mainWindow.loadURL(url.format({
