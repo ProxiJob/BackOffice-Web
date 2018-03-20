@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../css/login.css">
+
+	<title>ProxiJob • Login</title>
+</head>
+
+<body>
+	<div class="h-100 row">
+		<div class="col-md-4"></div>
+		<div class="bloc-login col-md-4">
+			<p class="logo justify-content-center">
+				<img src="../ressources/logo.png" alt="logo">
+			</p>
+			<div class="row justify-content-center" style="padding-top: 64px;">
+				<form onSubmit="connect(); return false;">
+					<div class="input">
+						<label for="input_text" class="input_label">Identifiant</label>
+						<input id="userName" type="text" class="input_text" name="input_text" />
+					</div>
+					<div class="input">
+						<label for="input_text" class="input_label">Mot de passe</label>
+						<input id="userPassword" type="text" class="input_text" name="input_text" />
+					</div>
+					<div class="row justify-content-center" style="padding-top: 37px;">
+						<button class="button blue" href="#">Se connecter</button>
+					</div>
+					<div class="row justify-content-center" id="errorAlert" style="padding-top: 20px;"></div>
+				</form>
+			</div>
+
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+	<script>
+		const inputs = document.querySelectorAll('input.input_text');
+
+		inputs.forEach(function (input) {
+			input.addEventListener('focus', function () {
+				this.parentNode.classList.add('is-focused');
+				this.parentNode.classList.add('has-label');
+			});
+			input.addEventListener('blur', function () {
+				this.parentNode.classList.remove('is-focused');
+				if (this.value == '') {
+					this.parentNode.classList.remove('has-label');
+				}
+			});
+		});
+	</script>
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../js/login.js"></script>
+</body>
+
+</html>
