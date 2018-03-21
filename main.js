@@ -10,7 +10,6 @@ const path = require('path')
 const url = require('url')
 
 const ipc = require('electron').ipcMain
-require('jquery');
 
 require('electron-reload')(__dirname);
 

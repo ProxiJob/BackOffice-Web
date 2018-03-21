@@ -4,7 +4,6 @@
 */
 
 var Parse = require('parse');
-var $j = require('jquery');
 
 Parse.initialize("proxiID");
 Parse.serverURL = 'https://proxijob.herokuapp.com/parse'
