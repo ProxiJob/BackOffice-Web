@@ -11,6 +11,7 @@
  */
 body {
         background: #fafafa;
+        overflow-x: hidden;
 }
 
 /**
@@ -77,7 +78,7 @@ body {
 }
 
 #sidebar ul li.active>a {
-        background: rgba(22, 7, 51, 0.5);
+        background: rgba(25, 7, 51, 0.5);
         border-left: solid 4px #03f3c9;
         color: white;
 }
@@ -92,10 +93,54 @@ body {
  */
 #content {
         width: calc(100% - 314px);
-        padding: 40px;
+        padding: 0px;
         min-height: 100vh;
         transition: all 0.3s;
         position: absolute;
         top: 0;
         right: 0;
+}
+
+.header-bar {
+        height: 74px;
+        background-color: #190733;
+}
+
+/**
+ * Badges
+ */
+
+.box-grid {
+        height:127px;
+        padding-left: 38.88px;
+        padding-right: 26.27px;
+}
+
+#badge-box {
+        border-radius: 3px;
+        background: linear-gradient(#370c69, #290a4d);
+        height:100%;
+}
+
+#badge-box .badge-text {
+        font-style: "Avenir LT Std 65 Medium";
+        font-size: 16px;
+        text-transform: uppercase;
+        color: white;
+        padding-top: 26.92px;
+        padding-left: 28.78px;
+}
+
+#badge-box .badge-value {
+        font-style: "Avenir LT Std 95 Black";
+        font-size: 24px;
+        text-transform: uppercase;
+        color: white;
+        padding-left: 28.78px;
+}
+
+#badge-box .badge-ico {
+        float: right;
+        top: 31.89px;
+        right: 25.68px;
 }
