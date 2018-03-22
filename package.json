@@ -4,15 +4,42 @@
 	"description": "A desktop app for business account on ProxiJob app",
 	"main": "main.js",
 	"scripts": {
-		"start": "electron ."
+		"start": "electron .",
+		"package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=app/ressources/app-ico.icns --prune=true --out=release-builds-mac",
+		"package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/ressources/app-ico.ico --prune=true --out=release-builds-windows --version-string.CompanyName='CE' --version-string.FileDescription='CE' --version-string.ProductName='ProxiJob'",
+		"package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds-linux",
+		"create-installer-mac": "electron-installer-dmg ./release-builds-mac/Electron\\ tutorial\\ app-darwin-x64/Electron\\ tutorial\\ app.app electron-tutorial-app --out=release-builds --overwrite --icon=app/ressources/app-ico.icns",
+		"build": "npm run package-mac && npm run package-win && create-installer-mac"
 	},
 	"author": "",
 	"license": "ISC",
+	"dependencies": {
+		"jquery": "^3.3.1",
+		"parse": "^1.11.1"
+	},
 	"devDependencies": {
 		"bootstrap": "^4.0.0",
-		"electron": "^1.8.2",
+		"codesign": "0.0.9",
+		"electron": "^1.8.4",
+		"electron-builder": "^20.5.1",
+		"electron-installer-dmg": "^0.2.1",
 		"electron-reload": "^1.2.2",
 		"jquery": "^3.3.1",
-		"parse": "^1.11.0"
+		"parse": "^1.11.1"
+	},
+	"build": {
+		"asar": true,
+		"npmRebuild": false,
+		"win": {
+			"target": "nsis"
+		},
+		"nsis": {
+			"oneClick": true,
+			"warningsAsErrors": false,
+			"perMachine": true
+		},
+		"publish": {
+			"provider": "generic"
+		}
 	}
 }
