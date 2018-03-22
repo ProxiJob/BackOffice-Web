@@ -30,7 +30,7 @@
 	"build": {
 		"asar": true,
 		"npmRebuild": false,
-		"win": {n 
+		"win": {
 			"target": "nsis"
 		},
 		"nsis": {
