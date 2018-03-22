@@ -8,7 +8,7 @@
 		"package-mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=app/ressources/app-ico.icns --prune=true --out=release-builds-mac",
 		"package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/ressources/app-ico.ico --prune=true --out=release-builds-windows --version-string.CompanyName='CE' --version-string.FileDescription='CE' --version-string.ProductName='ProxiJob'",
 		"package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds-linux",
-		"create-installer-mac": "electron-installer-dmg ./release-builds-mac/Electron\\ tutorial\\ app-darwin-x64/Electron\\ tutorial\\ app.app electron-tutorial-app --out=release-builds --overwrite --icon=app/ressources/app-ico.icns",
+		"create-installer-mac": "electron-installer-dmg ./release-builds-mac/ProxiJob-darwin-x64/ProxiJob.app electron-tutorial-app --out=release-builds --overwrite --icon=app/ressources/app-ico.icns",
 		"build": "npm run package-mac && npm run package-win && create-installer-mac"
 	},
 	"author": "",
@@ -30,7 +30,7 @@
 	"build": {
 		"asar": true,
 		"npmRebuild": false,
-		"win": {
+		"win": {n 
 			"target": "nsis"
 		},
 		"nsis": {
