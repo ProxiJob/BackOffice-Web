@@ -79,6 +79,10 @@ body {
         left: 28px
 }
 
+.sidebar-icon {
+        cursor: pointer;
+}
+
 /**
  * Content
  */
@@ -130,6 +134,7 @@ body {
         transition: .3s;
         background-color: #eff0f1;
         width: 400px;
+        height: 37px;
 }
       
  .input_text:focus {
@@ -144,3 +149,63 @@ body {
                 top: 250px;
         }
 
+
+/**
+ * Box missions
+ **/
+.text {
+        font-style: "Avenir LT Std 95 Black";
+        font-size: 22.86px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #350c65;
+}
+
+.item-listing {
+        background: #eff0f1;
+        height: 80.46px;
+        margin: 0px 0px 7px 0px;
+}
+
+.item-listing-statut {
+        float: right;
+        bottom: 10px;
+        right: 10px;
+        font-style: "Avenir LT Std 65 Medium";
+        font-size: 12.07px;
+        font-weight: 500;
+        color: #2b0d4e;
+        text-transform: uppercase;
+}
+
+.item-listing-infos {
+        font-style: "Avenir LT Std 85 Heavy";
+        font-size: 15.58px;
+        font-weight: 500;
+        color: #2b0d4e;
+        top: 15px;
+        left: 100px;
+}
+
+.item-listing-title {
+        font-style: "Avenir LT Std 55 Roman";
+        font-size: 12.94px;
+        font-weight: 500;
+        color: #2b0d4e;
+        top: 35px;
+        left: 100px;
+}
+
+.item-listing-logo  {
+        top: 10px;
+        left: 10px;
+        height: 60px;
+        width: 80px;
+}
+
+.missions-see-all {
+        font-style: "Avenir LT Std 65 Medium";
+        font-size: 15.07px;
+        font-weight: 500;
+        color: #2b0d4e;
+}

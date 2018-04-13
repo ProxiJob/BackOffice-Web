@@ -13,7 +13,7 @@ const ipc = require('electron').ipcMain
 
 var Parse = require('./app/js/dbLogin.js');
 
-//require('electron-reload')(__dirname+'/app');
+require('electron-reload')(__dirname+'/app');
 
 let mainWindow
 

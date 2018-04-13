@@ -33,12 +33,12 @@
 					</a>
 				</li>
 				<li class="relative">
-					<a class="sidebar-icon" href="#">
+					<a class="sidebar-icon" href="./listMission.html">
 						<img class="absolute icon-sidebar" src="../ressources/icons/ico-mes-missions.png" alt="mes-missions"> Mes missions
 					</a>
 				</li>
 				<li class="relative">
-					<a class="sidebar-icon" href="#">
+					<a class="sidebar-icon" onclick="disconnect();">
 						<img class="absolute icon-sidebar" src="../ressources/icons/ico-deconnection.png" alt="mes-missions"> Déconnection
 					</a>
 				</li>
@@ -87,7 +87,7 @@
 					<div id="missions-listing">
 						<!-- Fill in JS -->
 					</div>
-					<div onclick="" class="missions-see-all" style="text-align:right; cursor:pointer;">
+					<div onclick="location.href='./listMission.html'" class="missions-see-all" style="text-align:right; cursor:pointer;">
 						Voir toutes les annonces...
 					</div>
 				</div>
@@ -117,5 +117,5 @@
 	});
 </script>
 <script src="../js/jobs.js"></script>
-
+<script src="../js/disconnect.js"></script>
 </html>

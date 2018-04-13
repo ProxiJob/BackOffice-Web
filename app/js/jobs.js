@@ -37,40 +37,31 @@ var start = new moment(d);
 
 //query.greaterThanOrEqualTo('dateStart', start.toDate());
 
-
 query.find({
         success: function (jobs) {
-                console.log(jobs);
                 jobs.forEach(function(job) {
-                        var wordAtt = (job.attributes.dateStart > start.toDate() ? "ont" : "avaient");
-                        var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
+                                var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
+                                var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
 
-                        var html = '<div class="item-listing relative">';
-                        html += '<img class="item-listing-logo absolute" src="'+ dataFile.getData("companyLogo") +'"></img>';
-                        html += '<div class="item-listing-infos absolute">' + job.attributes.postule.length + ' personne(s) ' + wordAtt + ' postulé à votre annonce.</div>';
-                        html += '<div class="item-listing-title absolute">' + job.attributes.job + '</div>';
-                        html += '<div class="item-listing-statut absolute">' + annStatut + '</div>';
-                        html += '</div>';
-                        $j("#missions-listing").append(html);
+                                var html = '<div id="'+ job.id +'" onclick="displayMission(\''+ job.id +'\'); return false;" class="item-listing relative">';
+                                html += '<img class="item-listing-logo absolute" src="'+ job.attributes.company.get("logo").url() +'"></img>';
+                                html += '<div class="item-listing-infos absolute">' + wordAtt + ' candidat(s).</div>';
+                                html += '<div class="item-listing-title absolute">' + job.attributes.job + '</div>';
+                                html += '<div class="item-listing-statut absolute">' + annStatut + '</div>';
+                                html += '</div>';
+                                $j("#missions-listing").append(html);
+                        
                 });
                 
         },
         error: function (object, error) {
                 console.log("getJobs :" + error);
-                jobsList = undefined;
         }
 });
 
-function changeMenuMissions() {
-$j.ajax({
-        type: "POST",
-        url: "../actions.php",
-        data: {
-             jobsList: jobsList
-        },
-        success: function (data) {
-            alert(data);
-    
-        }
-    });
+
+function displayMission(idMission) {
+        console.log(idMission);
+        var html = '<div id="">' + idMission + '</div>';
+        $j("#missions-content").html(html);
 }

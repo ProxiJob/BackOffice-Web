@@ -38,12 +38,12 @@
 					</a>
 				</li>
 				<li class="relative">
-					<a class="sidebar-icon" href="#">
+					<a class="sidebar-icon" href="./listMission.html">
 						<img class="absolute icon-sidebar" src="../ressources/icons/ico-mes-missions.png" alt="mes-missions"> Mes missions
 					</a>
 				</li>
 				<li class="relative">
-					<a class="sidebar-icon" href="#">
+					<a class="sidebar-icon" href="disconnect();">
 						<img class="absolute icon-sidebar" src="../ressources/icons/ico-deconnection.png" alt="mes-missions"> Déconnection
 					</a>
 				</li>
@@ -64,24 +64,22 @@
 									</div>
 							<div class="row justify-content-center input relative" style="height: 100px;">
 								<div for="input_text" class="input_label">Nom de la mission</div>
-								<input id="mission_title" type="text" class="input_text absolute form-content" name="input_text"/>
+								<input id="mission_title" type="text" class="input_text absolute form-content text-center" name="input_text"/>
 							</div>
-
-
 
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 								<div for="input_text" class="input_label">Début</div>
-								<input id="mission_start" type="text" class="calendar input_text absolute form-content" name="input_text" />
+								<input id="mission_start" type="text" class="calendar input_text absolute form-content text-center" name="input_text" />
 							</div>
 
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 								<div for="input_text" class="input_label">Fin</div>
-								<input id="mission_end" type="text" class="calendar input_text absolute form-content" name="input_text" />
+								<input id="mission_end" type="text" class="calendar input_text absolute form-content text-center" name="input_text" />
 							</div>
 							
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 									<div for="input_text" class="input_label">Rémunération (/h)</div>
-									<input id="mission_cost" type="number" class="input_text absolute form-content" name="input_text" />
+									<input id="mission_cost" type="number" class="input_text absolute form-content text-center" name="input_text" />
 								</div>
 							
 
@@ -126,5 +124,5 @@ var $j = require('jquery');
 	});
 </script>
 	<script src="../js/addMission.js"></script>
-
+	<script src="../js/disconnect.js"></script>
 </html>

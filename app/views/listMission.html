@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../css/addMission.css">
+
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" media="all">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
+	<title>ProxiJob • Accueil</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<!-- Sidebar Holder -->
+		<nav id="sidebar">
+			<div class="logo sidebar-header">
+				<img height="120" width="168" src="../ressources/logo.png" alt="logo">
+			</div>
+
+			<ul class="list-unstyled components">
+				<li class="relative">
+					<a class="sidebar-icon" href="./dashboard.html">
+						<img id="home" class="absolute icon-sidebar" src="../ressources/icons/ico-house.png" alt="accueil"> Accueil
+					</a>
+				</li>
+				<li class="relative">
+					<a class="sidebar-icon" href="#">
+						<img class="absolute icon-sidebar" src="../ressources/icons/ico-add-mission.png" alt="add-mission"> Ajouter une mission
+					</a>
+				</li>
+				<li class="relative">
+					<a class="sidebar-icon" href="#">
+						<img class="absolute icon-sidebar" src="../ressources/icons/ico-mon-profil.png" alt="mon-profil"> Mon profil
+					</a>
+				</li>
+				<li class="relative active">
+					<a class="sidebar-icon" href="#">
+						<img class="absolute icon-sidebar" src="../ressources/icons/ico-mes-missions-active.png" alt="mes-missions"> Mes missions
+					</a>
+				</li>
+				<li class="relative">
+					<a class="sidebar-icon" onclick="disconnect();">
+						<img class="absolute icon-sidebar" src="../ressources/icons/ico-deconnection.png" alt="mes-missions"> Déconnection
+					</a>
+				</li>
+			</ul>
+
+		</nav>
+
+		<!-- Page Content Holder -->
+		<div id="content">
+			<div class="header-bar"></div>
+
+			<div class="row">
+				<div class="col-md-5 content-padding" style="height: 100%;">
+					<div class="missions-title">
+						<p class="text">Missions</p>
+					</div>
+					<div id="missions-listing">
+						<!-- Fill in JS -->
+					</div>
+                                </div>
+                                <div id="missions-content" class="col-md-7 content-padding">
+                                       <!-- Fill in JS by displayMission(); -->
+                                </div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+<script>
+
+var $j = require('jquery');
+
+
+	$j(".sidebar-icon").on({
+		mouseenter: function () {
+			if ($j(this).parent().hasClass("active") == false)
+				$j(this).children().attr('src', $j(this).children().attr("src").replace(".png", "") + '-active.png');
+
+		},
+		mouseleave: function () {
+			if ($j(this).parent().hasClass("active") == false)
+				$j(this).children().attr('src', $j(this).children().attr("src").replace("-active.png", ".png"));
+
+		}
+	});
+</script>
+	<script src="../js/jobs.js"></script>
+        <script src="../js/disconnect.js"></script>
+</html>
