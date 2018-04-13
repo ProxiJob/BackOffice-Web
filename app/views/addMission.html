@@ -4,6 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/addMission.css">
+
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" media="all">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+
 	<title>ProxiJob • Accueil</title>
 </head>
 
@@ -53,36 +58,36 @@
 			<div class="row">
 				<div class="col-md-12" style="height: 100%; width: 100%;">
 					<div class="form">
-						<form onSubmit="return false;">
+						<form onSubmit="addMission(); return false;">
 								<div class="title row justify-content-center input">
 										Ajouter une mission
 									</div>
 							<div class="row justify-content-center input relative" style="height: 100px;">
 								<div for="input_text" class="input_label">Nom de la mission</div>
-								<input id="userName" type="text" class="input_text absolute form-content" name="input_text"/>
+								<input id="mission_title" type="text" class="input_text absolute form-content" name="input_text"/>
 							</div>
 
 
 
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 								<div for="input_text" class="input_label">Début</div>
-								<input id="datepicker" type="password" class="input_text absolute form-content" name="input_text" />
+								<input id="mission_start" type="text" class="calendar input_text absolute form-content" name="input_text" />
 							</div>
 
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 								<div for="input_text" class="input_label">Fin</div>
-								<input id="userPassword" type="password" class="input_text absolute form-content" name="input_text" />
+								<input id="mission_end" type="text" class="calendar input_text absolute form-content" name="input_text" />
 							</div>
 							
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 									<div for="input_text" class="input_label">Rémunération (/h)</div>
-									<input id="userPassword" type="password" class="input_text absolute form-content" name="input_text" />
+									<input id="mission_cost" type="number" class="input_text absolute form-content" name="input_text" />
 								</div>
 							
 
 							<div class="row justify-content-center input relative"  style="height: 100px;">
 								<div for="input_text" class="input_label">Description</div>
-								<textarea class="input_text absolute form-content" name="input_text" style="height: 266px; width: 566px;"></textarea>
+								<textarea id="mission_desc" class="input_text absolute form-content" name="input_text" style="height: 266px; width: 566px;"></textarea>
 							</div>
 							
 							<div class="row justify-content-center input button-box relative"  style="height: 100px;">
@@ -104,9 +109,8 @@
 
 var $j = require('jquery');
 
-    $j( "#datepicker" ).datepicker();
-    
 
+    $(".calendar").datepicker();
 
 	$j(".sidebar-icon").on({
 		mouseenter: function () {
@@ -121,5 +125,6 @@ var $j = require('jquery');
 		}
 	});
 </script>
+	<script src="../js/addMission.js"></script>
 
 </html>
