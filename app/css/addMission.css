@@ -1,6 +1,6 @@
 /*
-** dashboard.css
-** Created by Gaël THOMAS - 20/03/2018
+** addMission.css
+** Created by Gaël THOMAS - 13/04/2018
 */
 
 @import url('./utils.css');
@@ -12,6 +12,7 @@ body {
         background: #fafafa;
         overflow-x: hidden;
 }
+
 
 /**
  * Sidebar
@@ -95,100 +96,49 @@ body {
 }
 
 /**
- * Badges
+ * Add form
  */
 
-.box-grid {
-        height:127px;
-        padding-left: 38.88px;
-        padding-right: 26.27px;
-}
-
-#badge-box {
-        border-radius: 3px;
-        background: linear-gradient(#370c69, #290a4d);
-        height:100%;
-}
-
-#badge-box .badge-text {
-        font-style: "Avenir LT Std 65 Medium";
-        font-size: 16px;
-        text-transform: uppercase;
-        color: white;
-        padding-top: 26.92px;
-        padding-left: 28.78px;
-}
-
-#badge-box .badge-value {
+ .title {
         font-style: "Avenir LT Std 95 Black";
-        font-size: 24px;
-        text-transform: uppercase;
-        color: white;
-        padding-left: 28.78px;
-}
-
-#badge-box .badge-ico {
-        float: right;
-        top: 31.89px;
-        right: 25.68px;
-}
-
-/**
- * Box missions
- **/
-.text {
-        font-style: "Avenir LT Std 95 Black";
-        font-size: 22.86px;
+        font-size: 33.02px;
         font-weight: 700;
-        text-transform: uppercase;
-        color: #350c65;
-}
-
-.item-listing {
-        background: #eff0f1;
-        height: 80.46px;
-        margin: 0px 0px 7px 0px;
-}
-
-.item-listing-statut {
-        float: right;
-        bottom: 10px;
-        right: 10px;
-        font-style: "Avenir LT Std 65 Medium";
-        font-size: 12.07px;
-        font-weight: 500;
         color: #2b0d4e;
         text-transform: uppercase;
+        padding: 30px 0px 30px 0px;
 }
 
-.item-listing-infos {
+.input_label {
         font-style: "Avenir LT Std 85 Heavy";
-        font-size: 15.58px;
-        font-weight: 500;
+        font-size: 21.08px;
         color: #2b0d4e;
-        top: 20px;
-        left: 100px;
+        text-transform: uppercase;     
 }
 
-.item-listing-title {
-        font-style: "Avenir LT Std 55 Roman";
-        font-size: 12.94px;
-        font-weight: 500;
-        color: #2b0d4e;
+.form-content {
         top: 40px;
-        left: 100px;
 }
 
-.item-listing-logo  {
-        top: 10px;
-        left: 10px;
-        height: 60px;
-        width: 80px;
+.input_text {
+        font-size: 1rem;
+        border-radius: 7px;
+        border: none;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+        background-color: #eff0f1;
+        width: 400px;
 }
+      
+ .input_text:focus {
+          outline: none;
+          background-color: #e4e6e7;
+        }
 
-.missions-see-all {
-        font-style: "Avenir LT Std 65 Medium";
-        font-size: 15.07px;
-        font-weight: 500;
-        color: #2b0d4e;
-}
+
+        /* Button */
+
+        .button-box {
+                top: 250px;
+        }
+

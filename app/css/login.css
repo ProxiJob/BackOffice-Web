@@ -3,8 +3,7 @@
 ** Created by Gaël THOMAS - 15/03/2018
 */
 
-@import url('../ressources/fonts/style.css');
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+@import url('./utils.css');
 
 /**
  * Background-image for login
@@ -34,36 +33,6 @@ html, body {
   .bloc-login {
     margin: 255px 0 0 0;
   }
-}
-
-/* Button */
-.button {
-  height: 54px;
-  width: 303px;
-  border: none;
-  color: white;
-  display: inline-block;
-  text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  transition: text-shadow 0.4s ease;
-  font-family: "Avenir LT Std 85 Heavy";
-  font-size: 17.44px;
-}
-
-.button:active {
-  position: relative;
-  top: 1px;
-  border-bottom-width: 1px;
-}
-
-.button:hover {
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, .3)
-}
-
-.blue {
-  background-color: #03f3c9;
-  color: #22093f;
 }
 
 /* Form (inputs) */

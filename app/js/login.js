@@ -3,10 +3,15 @@
 ** Created by Gaël THOMAS - 05/03/2018
 */
 
-var Parse = require('parse');
+const ParseDataFile = require('../js/dataSaving.js');
+const dataFile = new ParseDataFile({
+	configName: 'user-preferences',
+	defaults: {
+		windowConfig: { width: 1920, height: 1080 }
+	}
+});
 
-Parse.initialize("proxiID");
-Parse.serverURL = 'https://proxijob.herokuapp.com/parse'
+var Parse = require('../js/dbLogin.js');
 
 /* Function to connect to company dashboard */
 function connect() {
@@ -21,12 +26,30 @@ function connect() {
 			if (!user.attributes.business) {
 				var errorMessage = "<div class='alert alert-danger' role='alert' style='width:303px;'>Vous n'avez la permission d'accéder à cette page (compte entreprise requis).</div>";
 				$j("#errorAlert").html(errorMessage);
-			} else
+			} else {
+				dataFile.setData("userId", user.id);
+				dataFile.setData("companyId", user.attributes.company.id);
+				
+				var Company = Parse.Object.extend("Company");
+				var query = new Parse.Query(Company);
+
+				query.equalTo("objectId", user.attributes.company.id);
+				query.include("logo");
+				query.find({
+					success: function (jobs) {
+						dataFile.setData("companyLogo", jobs[0].get('logo').url());
+					},
+					error: function (object, error) {
+						console.log("LoginError: " + error);
+					}
+				});
 				document.location.href = "dashboard.html";
+			}
 		},
 		error: function (user, error) {
-			
 			var errorMessage = "<div class='alert alert-danger' role='alert' style='width:303px;'>E-mail / Mot de passe invalide.</div>";
+
+			console.log(errorMessage);
 			$j("#errorAlert").html(errorMessage);
 		}
 	});

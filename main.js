@@ -1,9 +1,9 @@
 'use strict';
 
 const electron = require('electron')
-// Module to control application life.
+
 const app = electron.app
-// Module to create native browser window.
+
 const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
@@ -11,11 +11,44 @@ const url = require('url')
 
 const ipc = require('electron').ipcMain
 
-//require('electron-reload')(__dirname);
+var Parse = require('./app/js/dbLogin.js');
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+require('electron-reload')(__dirname+'/app');
+
 let mainWindow
+
+// Personnals includes
+const ParseDataFile = require('./app/js/dataSaving.js');
+const dataFile = new ParseDataFile({
+	configName: 'user-preferences',
+	defaults: {
+	  windowConfig: { width: 1920, height: 1080 }
+	}
+});
+
+
+/* Check if user already logged */
+function isAlreadyConnect() {
+	var User = Parse.Object.extend("User");
+	var query = new Parse.Query(User);
+	var userId = dataFile.getData("userId");
+	
+	if (userId && userId != undefined) {
+		query.equalTo("Company", userId);
+		query.find({
+		success: function(user) {
+			console.log(dataFile.getData("companyId"));
+			if (user.attributes.company.id == dataFile.getData("companyId"))
+				return true;
+			return false;
+		},
+		error: function(object, error) {
+			console.log("isAlreadyConnect :" + error);
+			return false;
+		}
+		});
+	}
+}
 
 function createWindow() {
 	// Create the browser window.
@@ -23,6 +56,7 @@ function createWindow() {
 
 	mainWindow.setMenu(null);
 	// and load the index.html of the app.
+	//console.log(isAlreadyConnect());
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, '/app/views/login.html'),
 		protocol: 'file:',

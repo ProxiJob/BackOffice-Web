@@ -1,0 +1,34 @@
+/*
+** utils.css
+** Created by Gaël THOMAS - 13/04/2018
+*/
+
+/**
+ * Bootstrap
+ */
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+
+/**
+ * Fonts
+ */
+@import url('../ressources/fonts/style.css');
+
+/**
+ * Button style
+ */
+@import url('./button.css');
+
+/**
+ * Utils
+ */
+.relative {
+        position: relative;
+}
+
+.absolute {
+        position: absolute;
+}
+
+.content-padding {
+        padding-left: 38.88px;
+}
