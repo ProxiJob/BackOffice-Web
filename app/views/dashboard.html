@@ -33,20 +33,6 @@
 
 </body>
 <script>
-	var $j = require('jquery');
-
-	$j(".sidebar-icon").on({
-		mouseenter: function () {
-			if ($j(this).parent().hasClass("active") == false)
-				$j(this).children().attr('src', $j(this).children().attr("src").replace(".png", "") + '-active.png');
-
-		},
-		mouseleave: function () {
-			if ($j(this).parent().hasClass("active") == false)
-				$j(this).children().attr('src', $j(this).children().attr("src").replace("-active.png", ".png"));
-
-		}
-	});
 	loadSidebar();
 	changeMenu('/homeView/home.html');
 </script>

@@ -1,5 +1,5 @@
 /*
-** utils.js
+** actions.js
 ** Created by Gaël THOMAS - 14/04/2018
 */
 
