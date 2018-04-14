@@ -11,6 +11,7 @@
 body {
         background: #fafafa;
         overflow-x: hidden;
+        height: 100%;
 }
 
 /**
@@ -86,7 +87,7 @@ body {
 #content {
         width: calc(100% - 314px);
         padding: 0px;
-        min-height: 100vh;
+        min-height: 100%;
         transition: all 0.3s;
         position: absolute;
         top: 0;

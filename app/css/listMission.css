@@ -8,15 +8,86 @@
 /**
  * General
  */
+
 body {
         background: #fafafa;
-        overflow-x: hidden;
 }
+
+.header-bar {
+        position: fixed;
+        top: 0;
+        height: 74px;
+        background-color: #190733;
+}
+
 
 /**
  * Mission content
  */
-#missions-content {
+
+#view-mission-box {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 45%;
         height: 100%;
+}
+
+.missions-title {
+        padding: 0px 0px 0px 0px;
+}
+
+.text {
+        font-size: 22.94px;
+}
+
+.view-box {
+        position: relative;
         background: #2b0d4e;
+        height: 1000%;
+        width: 92%;
+        padding: 140px 20px 20px 20px;
+        overflow:scroll;
+        overflow-x:hidden;
+}
+
+.view-box-elem {
+        padding-bottom: 35px;
+}
+
+.view-box-title {
+        font-style: "Avenir LT Std 95 Black";
+        font-size: 22.94px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #03f3c9;
+}
+
+.view-box-text {
+        font-style: "Avenir LT Std 65 Medium";
+        font-size: 18.32px;
+        color: white;        
+}
+
+.item-listing {
+        width: 87%;
+}
+
+.view-box-picbox {
+        width: 100px;
+        height: 120px;
+        margin: 0px 10px 0px 0px;
+        display:inline-block;
+}
+
+.view-box-picbox-text {
+        font-style: "Avenir LT Std 95 Black";
+        font-size: 15.86px;
+        color: #cccccc;
+}
+
+@media (max-width: 1512px) {
+        .display-none-if {
+                display: none;
+        }      
 }

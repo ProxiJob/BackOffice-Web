@@ -13,7 +13,7 @@ const ipc = require('electron').ipcMain
 
 var Parse = require('./app/js/dbLogin.js');
 
-require('electron-reload')(__dirname+'/app');
+//require('electron-reload')(__dirname+'/app');
 
 let mainWindow
 
@@ -51,7 +51,7 @@ function isAlreadyConnect() {
 
 function createWindow() {
 	// Create the browser window.
-	mainWindow = new BrowserWindow({ width: 1920, height: 1080, minWidth: 1280, minHeight: 720, icon: __dirname + '/app/ressources/app-ico.ico' })
+	mainWindow = new BrowserWindow({ width: 1920, height: 1080, minWidth: 1280, minHeight: 900, icon: __dirname + '/app/ressources/app-ico.ico' })
 
 	mainWindow.setMenu(null);
 	

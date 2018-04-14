@@ -19,6 +19,23 @@
 @import url('./button.css');
 
 /**
+ * Window format
+ */
+html {
+        overflow: scroll;
+        overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+        background: #FF0000;
+}
+
+/**
  * Utils
  */
 .relative {
@@ -35,4 +52,8 @@
 
 .text-center {
         text-align: center;
+}
+
+.h100 {
+        height: 100% !important;
 }

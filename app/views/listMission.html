@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/addMission.css">
+	<link rel="stylesheet" href="../css/listMission.css">
 
 	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css" media="all">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -52,11 +53,17 @@
 		</nav>
 
 		<!-- Page Content Holder -->
-		<div id="content">
-			<div class="header-bar"></div>
+		<div id="content" class="h100">
+			<div class="row">
+				<div class="col-md-12 header-bar" style="position:fixed; z-index:10;"></div>
+			</div>
 
 			<div class="row">
-				<div class="col-md-5 content-padding" style="height: 100%;">
+				<div class="col-md-12" style="height:140px;"></div>
+			</div>
+
+			<div class="row h100">
+				<div class="col-md-6 content-padding h100">
 					<div class="missions-title">
 						<p class="text">Missions</p>
 					</div>
@@ -64,7 +71,7 @@
 						<!-- Fill in JS -->
 					</div>
                                 </div>
-                                <div id="missions-content" class="col-md-7 content-padding">
+                                <div id="view-mission-box" class="content-padding" style="z-index:11;">
                                        <!-- Fill in JS by displayMission(); -->
                                 </div>
 			</div>
@@ -92,6 +99,6 @@ var $j = require('jquery');
 		}
 	});
 </script>
-	<script src="../js/jobs.js"></script>
+	<script src="../js/listMission.js"></script>
         <script src="../js/disconnect.js"></script>
 </html>

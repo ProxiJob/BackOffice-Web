@@ -38,8 +38,6 @@ var start = new moment(d);
 
 //query.greaterThanOrEqualTo('dateStart', start.toDate());
 
-console.log("Start Job");
-
 query.find({
         success: function (jobs) {
                 jobs.forEach(function(job) {
@@ -62,9 +60,71 @@ query.find({
         }
 });
 
+function getMissionById(idMission) {
+        var Jobs = Parse.Object.extend("Jobs");
+        var query = new Parse.Query(Jobs);
+
+        query.equalTo('objectId', idMission);
+        query.include('logo');
+        var promise = query.find({
+                success: function (job) {
+                        return job;
+                },
+                error: function (object, error) {
+                        console.log("getJobs :" + error);
+                        return undefined;
+                }
+        });
+        return promise;
+}
+
+
+function formatDate(date) {
+        var monthNames = [
+          "Janvier", "Fébrirer", "Mars",
+          "Avril", "Mai", "Juin", "Juillet",
+          "Août", "Septembre", "Octobre",
+          "Novembre", "Décembre"
+        ];
+      
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+      
+        return day + ' ' + monthNames[monthIndex] + ' ' + year;
+      }
 
 function displayMission(idMission) {
-        console.log(idMission);
-        var html = '<div id="">' + idMission + '</div>';
-        $j("#missions-content").html(html);
+        getMissionById(idMission).then(function(result) {
+                var job = result[0];
+                var dateStart = formatDate(new Date(job.attributes.dateStart));
+                var dateEnd = formatDate(new Date(job.attributes.dateEnd));
+                
+                
+                var html = '<div class="view-box">';
+                html += '<div>Nom de la mission</div>';
+                
+                html += '<div>'+ job.attributes.job +'</div>';
+                
+                html += '<div>Descriptif de la mission</div>';
+                
+                html += '<div>'+ job.attributes.description +'</div>';
+
+                
+                html += '<div>Rémunération (/h)</div>';
+                
+                html += '<div>'+ job.attributes.price +' euros</div>';
+
+                html += '<div>Date de début</div>';
+                
+                html += '<div>'+ dateStart +'</div>';
+
+                html += '<div>Date de fin</div>';
+                
+                html += '<div>'+ dateEnd +'</div>';
+                
+                html += '</div>';
+               
+                $j("#view-mission-box").html(html);
+        });
 }
