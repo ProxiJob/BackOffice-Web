@@ -1,0 +1,22 @@
+/*
+** addMission.css
+** Created by Gaël THOMAS - 13/04/2018
+*/
+
+@import url('./utils.css');
+
+/**
+ * General
+ */
+body {
+        background: #fafafa;
+        overflow-x: hidden;
+}
+
+/**
+ * Mission content
+ */
+#missions-content {
+        height: 100%;
+        background: #2b0d4e;
+}

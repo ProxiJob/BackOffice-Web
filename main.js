@@ -13,7 +13,7 @@ const ipc = require('electron').ipcMain
 
 var Parse = require('./app/js/dbLogin.js');
 
-require('electron-reload')(__dirname+'/app');
+//require('electron-reload')(__dirname+'/app');
 
 let mainWindow
 
@@ -64,7 +64,7 @@ function createWindow() {
 	}))
 
 	// Open the DevTools.
-	mainWindow.webContents.openDevTools()
+//	mainWindow.webContents.openDevTools()
 
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function () {
