@@ -37,13 +37,14 @@ function connect() {
 				query.include("logo");
 				query.find({
 					success: function (jobs) {
+						console.log(jobs[0].get('logo').url());
 						dataFile.setData("companyLogo", jobs[0].get('logo').url());
 					},
 					error: function (object, error) {
 						console.log("LoginError: " + error);
 					}
 				});
-				document.location.href = "dashboard.html";
+				//document.location.href = "dashboard.html";
 			}
 		},
 		error: function (user, error) {
