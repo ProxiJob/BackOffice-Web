@@ -41,12 +41,8 @@ function addMission() {
         var startDate = new Moment(start);
         var endDate = new Moment(end);
 
-
-        console.log(title + ' ' + startDate.toDate() + ' ' + endDate.toDate() + ' ' + cost + ' ' + desc);
-
         var Company = Parse.Object.extend("Company");
-               
-        
+                       
 var query = new Parse.Query(Company);
 
 query.equalTo("objectId", dataFile.getData("companyId"));
@@ -68,12 +64,9 @@ query.find({
                 
                 jobs.save(null, {
                   success: function(gameScore) {
-                    // Execute any logic that should take place after the object is saved.
                      console.log('New object created with objectId: ' + gameScore.id);
                   },
                   error: function(gameScore, error) {
-                    // Execute any logic that should take place if the save fails.
-                    // error is a Parse.Error with an error code and message.
                     console.log('Failed to create new object, with error code: ' + error.message);
                   }
                 });             

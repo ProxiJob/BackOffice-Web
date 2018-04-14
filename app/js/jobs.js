@@ -46,7 +46,6 @@ query.find({
                                 var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
                                 var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
 
-                                console.log(dataFile.getData("companyLogo"));
                                 var html = '<div id="'+ job.id +'" onclick="displayMission(\''+ job.id +'\'); return false;" class="item-listing relative">';
                                 html += '<img class="item-listing-logo absolute" src="'+ dataFile.getData("companyLogo") +'"></img>';
                                 html += '<div class="item-listing-infos absolute">' + wordAtt + ' candidat(s).</div>';

@@ -13,7 +13,7 @@ const ipc = require('electron').ipcMain
 
 var Parse = require('./app/js/dbLogin.js');
 
-//require('electron-reload')(__dirname+'/app');
+require('electron-reload')(__dirname+'/app');
 
 let mainWindow
 
@@ -37,7 +37,6 @@ function isAlreadyConnect() {
 		query.equalTo("Company", userId);
 		query.find({
 		success: function(user) {
-			console.log(dataFile.getData("companyId"));
 			if (user.attributes.company.id == dataFile.getData("companyId"))
 				return true;
 			return false;
@@ -55,8 +54,7 @@ function createWindow() {
 	mainWindow = new BrowserWindow({ width: 1920, height: 1080, minWidth: 1280, minHeight: 720, icon: __dirname + '/app/ressources/app-ico.ico' })
 
 	mainWindow.setMenu(null);
-	// and load the index.html of the app.
-	//console.log(isAlreadyConnect());
+	
 	mainWindow.loadURL(url.format({
 		pathname: path.join(__dirname, '/app/views/login.html'),
 		protocol: 'file:',
