@@ -3,107 +3,11 @@
 ** Created by Gaël THOMAS - 13/04/2018
 */
 
-@import url('./utils.css');
-
-/**
- * General
- */
-body {
-        background: #fafafa;
-        overflow-x: hidden;
-}
-
-
-/**
- * Sidebar
- */
-#sidebar {
-        width: 314px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        z-index: 999;
-        background: url(../ressources/sidebar-bg.png) no-repeat center center fixed;
-        background-size: cover;
-        transition: all 0.3s;
-        color: #8c87ae;
-}
-
-#sidebar .logo {
-        text-align: center;
-}
-
-#sidebar.active {
-        margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-        padding: 40px 20px 20px 20px
-}
-
-#sidebar ul.components {      
-        padding: 19px 0;
-        font-style: "Avenir LT Std 35 Light";
-        font-size: 18px;
-}
-
-#sidebar ul li a {
-        padding: 18px 18px 18px 82px;
-        font-size: 1.1em;
-        display: block;
-}
-
-#sidebar a, a:hover, a:focus {
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.3s;
-}
-
-#sidebar ul li a:hover {
-        background: rgba(22, 7, 51, 0.5);
-        border-left: solid 4px #03f3c9;
-        color: white;
-}
-
-#sidebar ul li.active>a {
-        background: rgba(25, 7, 51, 0.5);
-        border-left: solid 4px #03f3c9;
-        color: white;
-}
-
-#sidebar .icon-sidebar {
-        top: 24px;
-        left: 28px
-}
-
-.sidebar-icon {
-        cursor: pointer;
-}
-
-/**
- * Content
- */
-#content {
-        width: calc(100% - 314px);
-        padding: 0px;
-        min-height: 100vh;
-        transition: all 0.3s;
-        position: absolute;
-        top: 0;
-        right: 0;
-}
-
-.header-bar {
-        height: 74px;
-        background-color: #190733;
-}
-
 /**
  * Add form
  */
 
- .title {
+.title {
         font-style: "Avenir LT Std 95 Black";
         font-size: 33.02px;
         font-weight: 700;
@@ -116,7 +20,7 @@ body {
         font-style: "Avenir LT Std 85 Heavy";
         font-size: 21.08px;
         color: #2b0d4e;
-        text-transform: uppercase;     
+        text-transform: uppercase;
 }
 
 .form-content {
@@ -134,23 +38,22 @@ body {
         width: 400px;
         height: 37px;
 }
-      
- .input_text:focus {
-          outline: none;
-          background-color: #e4e6e7;
-        }
 
+.input_text:focus {
+        outline: none;
+        background-color: #e4e6e7;
+}
 
-        /* Button */
+/* Button */
 
-        .button-box {
-                top: 250px;
-        }
-
+.button-box {
+        top: 250px;
+}
 
 /**
  * Box missions
  **/
+
 .text {
         font-style: "Avenir LT Std 95 Black";
         font-size: 22.86px;
@@ -194,7 +97,7 @@ body {
         left: 100px;
 }
 
-.item-listing-logo  {
+.item-listing-logo {
         top: 10px;
         left: 10px;
         height: 60px;

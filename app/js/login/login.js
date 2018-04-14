@@ -3,15 +3,15 @@
 ** Created by Gaël THOMAS - 05/03/2018
 */
 
-const ParseDataFile = require('../js/dataSaving.js');
-const dataFile = new ParseDataFile({
+const DataFile = require('../../js/data/dataSaving.js');
+const dataFile = new DataFile({
 	configName: 'user-preferences',
 	defaults: {
 		windowConfig: { width: 1920, height: 1080 }
 	}
 });
 
-var Parse = require('../js/dbLogin.js');
+var Parse = require('../../js/data/dbLogin.js');
 
 /* Function to connect to company dashboard */
 function connect() {
@@ -19,6 +19,11 @@ function connect() {
 	/* Get inputs informations */
 	var login = document.getElementById("userName").value;
 	var password = document.getElementById("userPassword").value;
+
+	/**
+	 * Parse variables
+	 */
+	var Company = Parse.Object.extend("Company");
 
 	/* Parse login API */
 	Parse.User.logIn(login, password, {
@@ -29,16 +34,16 @@ function connect() {
 			} else {
 				dataFile.setData("userId", user.id);
 				dataFile.setData("companyId", user.attributes.company.id);
-				
-				var Company = Parse.Object.extend("Company");
+	
 				var query = new Parse.Query(Company);
-
+	
 				query.equalTo("objectId", user.attributes.company.id);
 				query.include("logo");
+					
 				query.find({
 					success: function (jobs) {
 						dataFile.setData("companyLogo", jobs[0].get('logo').url());
-						document.location.href = "dashboard.html";
+						document.location.href = "../dashboard.html";
 					},
 					error: function (object, error) {
 						console.log("LoginError: " + error);

@@ -11,14 +11,14 @@ const url = require('url')
 
 const ipc = require('electron').ipcMain
 
-var Parse = require('./app/js/dbLogin.js');
+var Parse = require('./app/js/data/dbLogin.js');
 
 //require('electron-reload')(__dirname+'/app');
 
 let mainWindow
 
 // Personnals includes
-const ParseDataFile = require('./app/js/dataSaving.js');
+const ParseDataFile = require('./app/js/data/dataSaving.js');
 const dataFile = new ParseDataFile({
 	configName: 'user-preferences',
 	defaults: {
@@ -29,7 +29,6 @@ const dataFile = new ParseDataFile({
 
 /* Check if user already logged */
 function isAlreadyConnect() {
-	var User = Parse.Object.extend("User");
 	var query = new Parse.Query(User);
 	var userId = dataFile.getData("userId");
 	
@@ -56,7 +55,7 @@ function createWindow() {
 	mainWindow.setMenu(null);
 	
 	mainWindow.loadURL(url.format({
-		pathname: path.join(__dirname, '/app/views/login.html'),
+		pathname: path.join(__dirname, '/app/views/loginView/login.html'),
 		protocol: 'file:',
 		slashes: true
 	}))

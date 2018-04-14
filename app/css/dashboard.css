@@ -4,10 +4,10 @@
 */
 
 @import url('./utils.css');
-
 /**
  * General
  */
+
 body {
         background: #fafafa;
         overflow-x: hidden;
@@ -17,6 +17,7 @@ body {
 /**
  * Sidebar
  */
+
 #sidebar {
         width: 314px;
         position: fixed;
@@ -84,6 +85,7 @@ body {
 /**
  * Content
  */
+
 #content {
         width: calc(100% - 314px);
         padding: 0px;
@@ -104,7 +106,7 @@ body {
  */
 
 .box-grid {
-        height:127px;
+        height: 127px;
         padding-left: 38.88px;
         padding-right: 26.27px;
 }
@@ -112,7 +114,7 @@ body {
 #badge-box {
         border-radius: 3px;
         background: linear-gradient(#370c69, #290a4d);
-        height:100%;
+        height: 100%;
 }
 
 #badge-box .badge-text {
@@ -141,6 +143,7 @@ body {
 /**
  * Box missions
  **/
+
 .text {
         font-style: "Avenir LT Std 95 Black";
         font-size: 22.86px;
@@ -184,7 +187,7 @@ body {
         left: 100px;
 }
 
-.item-listing-logo  {
+.item-listing-logo {
         top: 10px;
         left: 10px;
         height: 60px;

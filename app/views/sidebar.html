@@ -1,0 +1,31 @@
+<div class="logo sidebar-header">
+        <img height="120" width="168" src="../ressources/logo.png" alt="logo">
+</div>
+
+<ul class="list-unstyled components">
+        <li class="active relative">
+                <a class="sidebar-icon" onclick="changeMenu('./homeView/home.html'); return false;">
+                        <img id="home" class="absolute icon-sidebar" src="../ressources/icons/ico-house-active.png" alt="accueil"> Accueil
+                </a>
+        </li>
+        <li class="relative">
+                <a class="sidebar-icon" onclick="changeMenu('./addView/addMission.html'); return false;">
+                        <img class="absolute icon-sidebar" src="../ressources/icons/ico-add-mission.png" alt="add-mission"> Ajouter une mission
+                </a>
+        </li>
+        <li class="relative">
+                <a class="sidebar-icon" href="#">
+                        <img class="absolute icon-sidebar" src="../ressources/icons/ico-mon-profil.png" alt="mon-profil"> Mon profil
+                </a>
+        </li>
+        <li class="relative">
+                <a class="sidebar-icon" onclick="changeMenu('./listingView/listMission.html'); return false;">
+                        <img class="absolute icon-sidebar" src="../ressources/icons/ico-mes-missions.png" alt="mes-missions"> Mes missions
+                </a>
+        </li>
+        <li class="relative">
+                <a class="sidebar-icon" onclick="disconnect();">
+                        <img class="absolute icon-sidebar" src="../ressources/icons/ico-deconnection.png" alt="mes-missions"> Déconnection
+                </a>
+        </li>
+</ul>

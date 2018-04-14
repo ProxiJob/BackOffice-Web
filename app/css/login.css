@@ -4,10 +4,10 @@
 */
 
 @import url('./utils.css');
-
 /**
  * Background-image for login
  */
+
 html, body {
   height: 100%;
   width: 100%;
@@ -19,6 +19,7 @@ html, body {
 }
 
 /* Logo */
+
 .logo {
   text-align: center;
 }
@@ -36,6 +37,7 @@ html, body {
 }
 
 /* Form (inputs) */
+
 .wrapper {
   padding: 10px;
   width: 500px;

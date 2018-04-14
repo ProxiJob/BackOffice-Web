@@ -4,7 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="../css/dashboard.css">
-	<title>ProxiJob • Accueil</title>
+	<link rel="stylesheet" href="../css/addMission.css">
+	<link rel="stylesheet" href="../css/listMission.css">
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css"
+	 media="all">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script src="../js/initModules.js"></script>
+	<script src="../js/menu/actions.js"></script>
+	<script type="text/javascript" src="../js/utils.js"></script>
+	<script type="text/javascript" src="../js/data/dbQueries.js"></script>
+	<title>ProxiJob • Dashboard</title>
 </head>
 
 <body>
@@ -12,89 +22,11 @@
 	<div class="wrapper">
 		<!-- Sidebar Holder -->
 		<nav id="sidebar">
-			<div class="logo sidebar-header">
-				<img height="120" width="168" src="../ressources/logo.png" alt="logo">
-			</div>
-
-			<ul class="list-unstyled components">
-				<li class="active relative">
-					<a class="sidebar-icon" href="#">
-						<img id="home" class="absolute icon-sidebar" src="../ressources/icons/ico-house-active.png" alt="accueil"> Accueil
-					</a>
-				</li>
-				<li class="relative">
-					<a class="sidebar-icon" href="./addMission.html">
-						<img class="absolute icon-sidebar" src="../ressources/icons/ico-add-mission.png" alt="add-mission"> Ajouter une mission
-					</a>
-				</li>
-				<li class="relative">
-					<a class="sidebar-icon" href="#">
-						<img class="absolute icon-sidebar" src="../ressources/icons/ico-mon-profil.png" alt="mon-profil"> Mon profil
-					</a>
-				</li>
-				<li class="relative">
-					<a class="sidebar-icon" href="./listMission.html">
-						<img class="absolute icon-sidebar" src="../ressources/icons/ico-mes-missions.png" alt="mes-missions"> Mes missions
-					</a>
-				</li>
-				<li class="relative">
-					<a class="sidebar-icon" onclick="disconnect();">
-						<img class="absolute icon-sidebar" src="../ressources/icons/ico-deconnection.png" alt="mes-missions"> Déconnection
-					</a>
-				</li>
-			</ul>
 
 		</nav>
 
 		<!-- Page Content Holder -->
 		<div id="content">
-			<div class="header-bar"></div>
-
-			<div class="row">
-				<div class="col-md-12" style="height:69.39px;"></div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 box-grid">
-					<div id="badge-box" class="relative">
-						<p class="badge-text">Missions à venir</p>
-						<p class="badge-value">01</p>
-						<img class="badge-ico absolute" src="../ressources/icons/ico-calendar.png" alt="calendar">
-					</div>
-				</div>
-				<div class="col-md-4 box-grid">
-					<div id="badge-box" class="relative">
-						<p class="badge-text">Missions passées</p>
-						<p class="badge-value ">05</p>
-						<img class="badge-ico absolute" src="../ressources/icons/ico-valid.png" alt="calendar">
-					</div>
-				</div>
-				<div class="col-md-4 box-grid">
-					<div id="badge-box" class="relative">
-						<p class="badge-text">Missions totales</p>
-						<p class="badge-value">06</p>
-						<img class="badge-ico absolute" src="../ressources/icons/ico-eye.png" alt="calendar">
-							
-					</div>
-				</div>
-			</div>
-
-			<div style="height: 66.50px;"></div>
-			<div class="row">
-				<div class="col-md-8 content-padding">
-					<div class="missions-title">
-						<p class="text">Missions</p>
-					</div>
-					<div id="missions-listing">
-						<!-- Fill in JS -->
-					</div>
-					<div onclick="location.href='./listMission.html'" class="missions-see-all" style="text-align:right; cursor:pointer;">
-						Voir toutes les annonces...
-					</div>
-				</div>
-				<div class="col-md-4" style="height:100px;">
-				
-				</div>
-			</div>
 
 		</div>
 	</div>
@@ -115,7 +47,8 @@
 
 		}
 	});
+	loadSidebar();
+	changeMenu('/homeView/home.html');
 </script>
-<script src="../js/jobs.js"></script>
-<script src="../js/disconnect.js"></script>
+
 </html>

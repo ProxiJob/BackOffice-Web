@@ -4,7 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="../../css/login.css">
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css"
+	 media="all">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 
 	<title>ProxiJob • Login</title>
 </head>
@@ -14,7 +18,7 @@
 		<div class="col-md-4"></div>
 		<div class="bloc-login col-md-4">
 			<p class="logo justify-content-center">
-				<img src="../ressources/logo.png" alt="logo">
+				<img src="../../ressources/logo.png" alt="logo">
 			</p>
 			<div class="row justify-content-center" style="padding-top: 64px;">
 				<form onSubmit="connect(); return false;">
@@ -24,7 +28,7 @@
 					</div>
 					<div class="input">
 						<label for="input_text" class="input_label">Mot de passe</label>
-						<input  value="1234" id="userPassword" type="password" class="input_text" name="input_text" />
+						<input value="1234" id="userPassword" type="password" class="input_text" name="input_text" />
 					</div>
 					<div class="row justify-content-center" style="padding-top: 37px;">
 						<button class="button blue" href="#">Se connecter</button>
@@ -52,8 +56,7 @@
 			});
 		});
 	</script>
-	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="../js/login.js"></script>
+	<script src="../../js/login/login.js"></script>
 </body>
 
 </html>

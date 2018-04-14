@@ -8,18 +8,12 @@
 /**
  * General
  */
-
-body {
-        background: #fafafa;
-}
-
-.header-bar {
+.header-bar-fixed {
         position: fixed;
         top: 0;
         height: 74px;
         background-color: #190733;
 }
-
 
 /**
  * Mission content
@@ -37,18 +31,19 @@ body {
         padding: 0px 0px 0px 0px;
 }
 
-.text {
+.m-text {
         font-size: 22.94px;
 }
 
 .view-box {
         position: relative;
         background: #2b0d4e;
-        height: 1000%;
+        height: 100%;
         width: 92%;
-        padding: 140px 20px 20px 20px;
-        overflow:scroll;
-        overflow-x:hidden;
+        top: 74px;
+        padding: 66px 20px 20px 20px;
+        overflow: scroll;
+        overflow-x: hidden;
 }
 
 .view-box-elem {
@@ -66,10 +61,10 @@ body {
 .view-box-text {
         font-style: "Avenir LT Std 65 Medium";
         font-size: 18.32px;
-        color: white;        
+        color: white;
 }
 
-.item-listing {
+.item-listing-view {
         width: 87%;
 }
 
@@ -77,7 +72,7 @@ body {
         width: 100px;
         height: 120px;
         margin: 0px 10px 0px 0px;
-        display:inline-block;
+        display: inline-block;
 }
 
 .view-box-picbox-text {
@@ -89,5 +84,11 @@ body {
 @media (max-width: 1512px) {
         .display-none-if {
                 display: none;
-        }      
+        }
+}
+
+.box-grid {
+        height: 127px;
+        padding-left: 38.88px;
+        padding-right: 26.27px;
 }
