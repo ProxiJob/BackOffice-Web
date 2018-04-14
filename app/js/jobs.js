@@ -45,7 +45,7 @@ query.find({
                                 var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
                                 var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
 
-                                console.log("Logo: " + job.attributes.company.get("logo").url());
+                                //console.log("Logo: " + job.attributes.company.get("logo").url());
                                 var html = '<div id="'+ job.id +'" onclick="displayMission(\''+ job.id +'\'); return false;" class="item-listing relative">';
                                // html += '<img class="item-listing-logo absolute" src="'+ job.attributes.company.get("logo").url() +'"></img>';
                                 html += '<div class="item-listing-infos absolute">' + wordAtt + ' candidat(s).</div>';
