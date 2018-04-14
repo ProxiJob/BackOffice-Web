@@ -7,21 +7,21 @@
         <div class="col-md-4 box-grid">
                 <div id="badge-box" class="relative">
                         <p class="badge-text">Missions à venir</p>
-                        <p class="badge-value">01</p>
+                        <p id="badge-incoming" class="badge-value">00</p>
                         <img class="badge-ico absolute" src="../ressources/icons/ico-calendar.png" alt="calendar">
                 </div>
         </div>
         <div class="col-md-4 box-grid">
                 <div id="badge-box" class="relative">
                         <p class="badge-text">Missions passées</p>
-                        <p class="badge-value ">05</p>
+                        <p id="badge-archived" class="badge-value">00</p>
                         <img class="badge-ico absolute" src="../ressources/icons/ico-valid.png" alt="calendar">
                 </div>
         </div>
         <div class="col-md-4 box-grid">
                 <div id="badge-box" class="relative">
                         <p class="badge-text">Missions totales</p>
-                        <p class="badge-value">06</p>
+                        <p id="badge-total" class="badge-value">00</p>
                         <img class="badge-ico absolute" src="../ressources/icons/ico-eye.png" alt="calendar">
 
                 </div>
@@ -37,7 +37,7 @@
                 <div id="missions-listing">
                         <!-- Fill in JS -->
                 </div>
-                <div onclick="changeMenu('./listingView/listMission.html'); return false;" class="missions-see-all" style="text-align:right; cursor:pointer;">
+                <div onclick="seeAllJobs(undefined); return false;" class="missions-see-all" style="text-align:right; cursor:pointer;">
                         Voir toutes les annonces...
                 </div>
         </div>
@@ -45,4 +45,5 @@
 
         </div>
 </div>
-<script src="../js/jobs/jobs.js"></script>
+<script src="../js/jobs/loadJobModule.js"></script>
+<script src="../js/jobs/listMissions.js"></script>

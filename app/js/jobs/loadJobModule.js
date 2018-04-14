@@ -1,5 +1,5 @@
 /*
-** jobs.js
+** loadJobModules.js
 ** Created by Gaël THOMAS - 13/04/2018
 */
 
@@ -20,24 +20,41 @@ query.include('logo');
 var d = new Date();
 var start = new Moment(d);
 
+var incoming = 0;
+var total = 0;
+var archive = 0;
+
 /**
  * Do query
  */
 query.find({
         success: function (jobs) {
+                var i = 0;
+
                 jobs.forEach(function (job) {
-                        var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
-                        var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
+                        incoming = (job.attributes.dateStart > start.toDate() ? incoming + 1 : incoming);
+                        total += 1;
 
-                        var html = '<div id="' + job.id + '" onclick="displayMission(\'' + job.id + '\'); return false;" class="item-listing relative">';
-                        html += '<img class="item-listing-logo absolute" src="' + dataFile.getData("companyLogo") + '"></img>';
-                        html += '<div class="item-listing-infos absolute">' + wordAtt + ' candidat(s).</div>';
-                        html += '<div class="item-listing-title absolute">' + job.attributes.job + '</div>';
-                        html += '<div class="item-listing-statut absolute">' + annStatut + '</div>';
-                        html += '</div>';
-                        $j("#missions-listing").append(html);
+                        if (i < 6) {
+                                var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
+                                var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
+                                
 
+                                var html = '<div id="' + job.id + '" onclick="seeAllJobs(\'' + job.id + '\'); return false;" class="item-listing relative">';
+                                html += '<img class="item-listing-logo absolute" src="' + dataFile.getData("companyLogo") + '"></img>';
+                                html += '<div class="item-listing-infos absolute">' + wordAtt + ' candidat(s).</div>';
+                                html += '<div class="item-listing-title absolute">' + job.attributes.job + '</div>';
+                                html += '<div class="item-listing-statut absolute">' + annStatut + '</div>';
+                                html += '</div>';
+                                $j("#missions-listing").append(html);
+                                i++;
+                        }
                 });
+                                
+                archive = total - incoming;
+                $('#badge-incoming').text(incoming);
+                $('#badge-archived').text(archive);
+                $('#badge-total').text(total);
 
         },
         error: function (object, error) {

@@ -1,5 +1,5 @@
 /*
-** jobs.js
+** listMissions.js
 ** Created by Gaël THOMAS - 13/04/2018
 */
 
@@ -7,7 +7,7 @@
  * Display mission with his id
  * @param {*} idMission 
  */
-function displayMission(idMission) {
+function displayMissionDetails(idMission) {
         getMissionById(idMission).then(function (result) {
                 var job = result[0];
                 var dateStart = formatDate(new Date(job.attributes.dateStart));
