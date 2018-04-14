@@ -37,14 +37,17 @@ var start = new moment(d);
 
 //query.greaterThanOrEqualTo('dateStart', start.toDate());
 
+console.log("Start Job");
+
 query.find({
         success: function (jobs) {
                 jobs.forEach(function(job) {
                                 var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
                                 var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
 
+                                console.log("Logo: " + job.attributes.company.get("logo").url());
                                 var html = '<div id="'+ job.id +'" onclick="displayMission(\''+ job.id +'\'); return false;" class="item-listing relative">';
-                                html += '<img class="item-listing-logo absolute" src="'+ job.attributes.company.get("logo").url() +'"></img>';
+                               // html += '<img class="item-listing-logo absolute" src="'+ job.attributes.company.get("logo").url() +'"></img>';
                                 html += '<div class="item-listing-infos absolute">' + wordAtt + ' candidat(s).</div>';
                                 html += '<div class="item-listing-title absolute">' + job.attributes.job + '</div>';
                                 html += '<div class="item-listing-statut absolute">' + annStatut + '</div>';

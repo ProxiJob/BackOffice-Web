@@ -4,6 +4,7 @@ const fs = require('fs');
 
 function getDataToParse(filePath, defaults) {
         try {
+          console.log(filePath);
           return JSON.parse(fs.readFileSync(filePath));
         } catch(error) {
           return defaults;
