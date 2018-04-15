@@ -80,6 +80,10 @@ function addMission() {
         var cost = document.getElementById("mission_cost").value;
         var desc = document.getElementById("mission_desc").value;
 
+        /* Check informations or display error */
+        if (!checkInputsMission(title, start, end, cost, desc, 223))
+                return;
+        
         /* Format date */
         var startDate = new Moment(start);
         var endDate = new Moment(end);
@@ -129,6 +133,10 @@ function updateJob(idJob) {
                 var end = new Date(document.getElementById("mission_end").value);
                 var cost = document.getElementById("mission_cost").value;
                 var desc = document.getElementById("mission_desc").value;
+
+                /* Check informations or display error */
+                if (!checkInputsMission(title, start, end, cost, desc, 0))
+                        return;
 
                 /* Format date */
                 var startDate = new Moment(start);

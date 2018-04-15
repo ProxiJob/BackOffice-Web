@@ -120,11 +120,11 @@ function displayEditMissionDetails(idMission) {
                 html += '<div class="view-box-elem row">';
                 html += '<div class="col-md-6">';
                 html += '<div class="view-box-title spacing">Date de début</div>';
-                html += '<input id="mission_start" type="text" value="'+dateStart+'" class="calendar-start input_text form-content-edit text-center w-96-p" name="input_text" />';       
+                html += '<input id="mission_start" type="text" value="'+dateStart+'" class="calendar-start input_text form-content-edit text-center w-96-p" name="input_text" READONLY/>';       
                 html += '</div>'
                 html += '<div class="col-md-6">';
                 html += '<div class="view-box-title spacing">Date de fin</div>';
-                html += '<input id="mission_end" type="text" value="'+dateEnd +'" class="calendar-end input_text form-content-edit text-center w-96-p" name="input_text" />';       
+                html += '<input id="mission_end" type="text" value="'+dateEnd +'" class="calendar-end input_text form-content-edit text-center w-96-p" name="input_text" READONLY/>';       
                 html += '</div>'
                 html += '</div>'
                 html += '<div class="view-box-elem row" style="height: 100px;">';
@@ -135,6 +135,7 @@ function displayEditMissionDetails(idMission) {
                 html += '<button class="button button-small blue ml-10" onClick="seeAllJobs(\'' + job.id + '\');return false;">Annuler</button>';
                 html += '</div>';
                 html += '</div>';
+                html += '<div class="row justify-content-center" style="padding: 0px 15px 0px 15px" id="errorAlert"></div>';
                 html += '</div>';
                 html += '</div>';
 

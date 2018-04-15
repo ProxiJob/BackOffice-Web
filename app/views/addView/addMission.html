@@ -15,12 +15,12 @@
 
 				<div class="row justify-content-center input relative" style="height: 100px;">
 					<div for="input_text" class="input_label">Début</div>
-					<input id="mission_start" type="text" class="calendar input_text absolute form-content text-center" name="input_text" />
+					<input id="mission_start" type="text" class="calendar input_text absolute form-content text-center" name="input_text" READONLY/>
 				</div>
 
 				<div class="row justify-content-center input relative" style="height: 100px;">
 					<div for="input_text" class="input_label">Fin</div>
-					<input id="mission_end" type="text" class="calendar input_text absolute form-content text-center" name="input_text" />
+					<input id="mission_end" type="text" class="calendar input_text absolute form-content text-center" name="input_text" READONLY/>
 				</div>
 
 				<div class="row justify-content-center input relative" style="height: 100px;">
@@ -34,16 +34,18 @@
 					<textarea id="mission_desc" class="input_text absolute form-content" name="input_text" style="height: 266px; width: 566px;"></textarea>
 				</div>
 
+				<div class="row justify-content-center" id="errorAlert" style="padding: 20px 40px 0px 40px;"></div>
+
 				<div class="row justify-content-center input button-box relative" style="height: 100px;">
 					<button class="button blue" href="#">Publier</button>
 				</div>
 
-				<div class="row justify-content-center" id="errorAlert" style="padding-top: 20px;"></div>
 			</form>
 		</div>
 	</div>
 </div>
 
+<script type="text/javascript" src="../js/jobs/checkMission.js"></script>
 <script>
 	$(".calendar").datepicker({
 		closeText: 'Fermer',

@@ -22,7 +22,7 @@ const dataFile = new ParseDataFile({
 	}
 });
 
-require('electron-reload')(__dirname+'/app');
+//require('electron-reload')(__dirname+'/app');
 
 /* Check if user already logged */
 function isAlreadyConnect() {
