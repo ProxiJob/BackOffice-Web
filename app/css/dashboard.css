@@ -200,3 +200,10 @@ body {
         font-weight: 500;
         color: #2b0d4e;
 }
+
+.alert-title {
+        font-style: "Avenir LT Std 95 Black";
+        font-size: 20px;
+        font-weight: 500;
+        color: #03f3c9;
+}

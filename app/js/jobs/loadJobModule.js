@@ -31,6 +31,11 @@ query.find({
         success: function (jobs) {
                 var i = 0;
 
+                if (jobs.length == 0) {
+                        var html = '<div class="alert-title spacing">Aucune missions à afficher</div>';
+                        $j("#allJobs").addClass("hidden");
+                        $j("#missions-listing").append(html);
+                }
                 jobs.forEach(function (job) {
                         incoming = (job.attributes.dateStart > start.toDate() ? incoming + 1 : incoming);
                         total += 1;

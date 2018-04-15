@@ -66,3 +66,7 @@ html {
 .w-96-p {
         width: 96% !important;
 }
+
+.hidden {
+        display: none;
+}

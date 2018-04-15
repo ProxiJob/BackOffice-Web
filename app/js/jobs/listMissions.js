@@ -135,7 +135,7 @@ function displayEditMissionDetails(idMission) {
                 html += '</div>';
 
                 $j("#view-mission-box").html(html);
-                console.log(Moment(new Date(job.attributes.dateStart)).format("YYYY-MM-DD"));
+                
                 setTimeout(function(){
                         $(".calendar-start").datepicker({
                                 defaultDate: dateStart,

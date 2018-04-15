@@ -22,6 +22,11 @@ var start = new Moment(d);
  */
 query.find({
         success: function (jobs) {
+                if (jobs.length == 0) {
+                        var html = '<div class="alert-title spacing">Aucune missions à afficher</div>';
+                        $j("#allJobs").addClass("hidden");
+                        $j("#missions-listing").append(html);
+                }
                 jobs.forEach(function (job) {
                         var wordAtt = (job.attributes.postule.length >= 1 ? job.attributes.postule.length : "Aucun");
                         var annStatut = (job.attributes.dateStart > start.toDate() ? "À venir" : "Archivé");
