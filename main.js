@@ -46,7 +46,7 @@ function isAlreadyConnect() {
 }
 
 function createWindow() {
-	mainWindow = new BrowserWindow({ width: 1920, height: 1080, minWidth: 1280, minHeight: 900, icon: __dirname + '/app/ressources/app-ico.ico' })
+	mainWindow = new BrowserWindow({ width: 1920, height: 1080, minWidth: 1280, minHeight: 925, icon: __dirname + '/app/ressources/app-ico.ico' })
 
 	mainWindow.setMenu(null);
 	

@@ -60,7 +60,7 @@ function displayMissionDetails(idMission) {
                         html += '<div class="view-box-title">Rémunération (/h)</div>';
                         html += '<div class="view-box-text">' + job.attributes.price + ' euros</div>';
                         html += '</div>'
-                        html += '<div class="view-box-elem row" style="padding-bottom: 15px;">';
+                        html += '<div class="view-box-elem row">';
                         html += '<div class="col-md-6">';
                         html += '<div class="view-box-title">Date de début</div>';
                         html += '<div class="view-box-text">' + dateStart + '</div>';
