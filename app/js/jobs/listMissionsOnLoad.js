@@ -39,3 +39,9 @@ query.find({
                 console.log("getJobs :" + error);
         }
 });
+
+setTimeout(function(){
+        if ($j("#view-mission-box").children().length == 0) {
+                displayMissionDetails($j(".item-listing").attr('id'));
+        }
+}, 500);

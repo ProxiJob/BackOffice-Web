@@ -58,3 +58,7 @@ html {
 .h100 {
         height: 100% !important;
 }
+
+.ml-10 {
+        margin-left: 10px !important;
+}

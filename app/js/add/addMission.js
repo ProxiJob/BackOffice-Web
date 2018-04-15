@@ -36,6 +36,7 @@ function addMission() {
                         jobs.save(null, {
                                 success: function (gameScore) {
                                         console.log('New object created with objectId: ' + gameScore.id);
+                                        seeAllJobs(gameScore.id);
                                 },
                                 error: function (gameScore, error) {
                                         console.log('Failed to create new object, with error code: ' + error.message);

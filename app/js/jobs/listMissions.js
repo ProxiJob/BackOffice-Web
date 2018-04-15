@@ -15,7 +15,7 @@ function displayMissionDetails(idMission) {
 
                 getUserByIds(job.attributes.postule).then(function (result) {
                         var users = result;
-                        var html = '<div class="view-box">';
+                        var html = '<div id="view-'+job.id+'" class="view-box">';
 
                         html += '<div class="view-box-elem row">';
                         html += '<div class="col-md-12">';
@@ -60,7 +60,7 @@ function displayMissionDetails(idMission) {
                         html += '<div class="view-box-title">Rémunération (/h)</div>';
                         html += '<div class="view-box-text">' + job.attributes.price + ' euros</div>';
                         html += '</div>'
-                        html += '<div class="view-box-elem row">';
+                        html += '<div class="view-box-elem row" style="padding-bottom: 15px;">';
                         html += '<div class="col-md-6">';
                         html += '<div class="view-box-title">Date de début</div>';
                         html += '<div class="view-box-text">' + dateStart + '</div>';
@@ -70,6 +70,18 @@ function displayMissionDetails(idMission) {
                         html += '<div class="view-box-text">' + dateEnd + '</div>';
                         html += '</div>'
                         html += '</div>'
+
+                        html += '<div class="view-box-elem row" style="height: 100px;">';
+                        html += '<div class="col-md-6 view-box-button">';
+                        html += '<button class="button button-small blue ml-10" onClick="editJob(\''+job.id+'\');">Modifier</button>';
+                        html += '</div>';
+                        html += '<div class="col-md-6 view-box-button">';
+                        html += '<button class="button button-small blue ml-10" onClick="deleteJob(\''+job.id+'\', true);return false;">Supprimer</button>';
+                        html += '</div>';
+                        
+                        html += '</div>';
+
+
                         html += '</div>';
                         $j("#view-mission-box").html(html);
                 });

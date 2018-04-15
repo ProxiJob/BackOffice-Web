@@ -44,3 +44,27 @@ function getUserByIds(idsUser) {
         });
         return promise;
 }
+
+/**
+ * Delete a job by his id
+ * @param {int} idJob 
+ */
+function deleteJob(idJob, reload) {
+        if (confirm("Voulez vous vraiment supprimer cette mission.")) {
+                getMissionById(idJob).then(function (result) {
+                        result[0].destroy({
+                                success: function (job) {
+                                        console.log("Object " + job.id + "deleted.");
+                                },
+                                error: function (job, error) {
+                                        console.log("deleteJob: " + error.message);
+                                }
+                        });
+                });
+                if (reload) {
+                        setTimeout(function(){
+                                seeAllJobs(undefined);
+                        }, 500);
+                }
+        }
+}

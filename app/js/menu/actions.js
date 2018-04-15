@@ -23,8 +23,9 @@ function seeAllJobs(initialInit) {
                 $j(this).attr('src', $j(this).attr("src").replace("-active.png", ".png"));
         });
         $j(".sidebar-mission").children().attr('src', $j(".sidebar-mission").children().attr("src").replace(".png", "-active.png"));
-        if (initialInit == undefined)
+        
+        if (initialInit == undefined) {
                 displayMissionDetails($j(".item-listing").attr('id'));
-        else
+        } else
                 displayMissionDetails(initialInit);
 }

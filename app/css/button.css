@@ -31,3 +31,8 @@
 	background-color: #03f3c9;
 	color: #22093f;
 }
+
+.button-small {
+	width: 200px;
+	height: 50px;
+}
