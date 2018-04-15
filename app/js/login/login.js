@@ -12,6 +12,7 @@ const dataFile = new DataFile({
 });
 
 var Parse = require('../../js/data/dbLogin.js');
+var $j = require('jquery');
 
 /* Function to connect to company dashboard */
 function connect() {
@@ -53,8 +54,6 @@ function connect() {
 		},
 		error: function (user, error) {
 			var errorMessage = "<div class='alert alert-danger' role='alert' style='width:303px;'>E-mail / Mot de passe invalide.</div>";
-
-			console.log(errorMessage);
 			$j("#errorAlert").html(errorMessage);
 		}
 	});

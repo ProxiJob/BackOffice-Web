@@ -113,7 +113,7 @@ function displayEditMissionDetails(idMission) {
                 html += '<div class="view-box-elem">';
                 html += '<div class="view-box-title spacing">Rémunération (/h)</div>';
                 html += '<div class="row input input-box">';
-                html += '<input id="mission_cost" type="number" value="'+job.attributes.price+'" class="input_text form-content-edit text-center w-96-p" name="input_text" />';
+                html += '<input id="mission_cost" type="number" step=".01" value="'+job.attributes.price+'" class="input_text form-content-edit text-center w-96-p" name="input_text" />';
                 html += '</div>';
                 html += '</div>'
 
@@ -128,8 +128,12 @@ function displayEditMissionDetails(idMission) {
                 html += '</div>'
                 html += '</div>'
                 html += '<div class="view-box-elem row" style="height: 100px;">';
-                html += '<div class="col-md-12 view-box-button">';
+                html += '<div class="col-md-6 view-box-button">';
                 html += '<button class="button button-small blue ml-10" onClick="updateJob(\'' + job.id + '\');return false;">Valider</button>';
+                html += '</div>';
+                html += '<div class="col-md-6 view-box-button">';
+                html += '<button class="button button-small blue ml-10" onClick="seeAllJobs(\'' + job.id + '\');return false;">Annuler</button>';
+                html += '</div>';
                 html += '</div>';
                 html += '</div>';
                 html += '</div>';
@@ -166,6 +170,6 @@ function displayEditMissionDetails(idMission) {
                                 dateFormat: 'yy-mm-dd'
                         });
 
-                }, 500);
+                }, 300);
         });
 }

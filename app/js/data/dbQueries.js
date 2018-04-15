@@ -99,11 +99,11 @@ function addMission() {
                         jobs.set("description", desc);
                         jobs.set("company", company[0]);
                         jobs.save(null, {
-                                success: function (gameScore) {
-                                        console.log('New object created with objectId: ' + gameScore.id);
-                                        seeAllJobs(gameScore.id);
+                                success: function (job) {
+                                        console.log('New object created with objectId: ' + job.id);
+                                        seeAllJobs(job.id);
                                 },
-                                error: function (gameScore, error) {
+                                error: function (job, error) {
                                         console.log('Failed to create new object, with error code: ' + error.message);
                                 }
                         });
