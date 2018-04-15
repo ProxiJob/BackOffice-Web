@@ -22,7 +22,7 @@ function displayMissionDetails(idMission) {
                         html += '<div class="view-box-title">Candidats</div>';
 
                         if (users.length == 0)
-                                html += '<div class="view-box-text">Aucun candidats n\'a postulé à votre annonce.</div>';
+                                html += '<div class="view-box-text">Aucun candidat n\'a postulé à votre annonce.</div>';
                         var i = 0;
                         users.forEach(function (user) {
                                 if (i++ < 4) {

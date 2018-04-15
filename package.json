@@ -3,32 +3,43 @@
 	"version": "1.0.0",
 	"description": "A desktop app for business account on ProxiJob app",
 	"main": "main.js",
+	"iconUrl": "D:/Projets/ProxiJob/Software/app/ressources/app-ico.ico",
+	"icon": "D:/Projets/ProxiJob/Software/app/ressources/app-ico.ico",
 	"scripts": {
 		"start": "electron .",
 		"package-mac": "electron-packager . --overwrite --asar=true --platfoorm=darwin --arch=x64 --icon=app/ressources/app-ico.icns --prune=true --out=release-builds-mac",
-		"package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/ressources/app-ico.ico --prune=true --out=release-builds-windows --version-string.CompanyName='CE' --version-string.FileDescription='CE' --version-string.ProductName='ProxiJob'",
+		"package-win": "electron-packager . --overwrite --asar=true --platform=win32 --icon=app/ressources/app-ico.ico --prune=true --out=release-builds-windows --version-string.CompanyName='CE' --version-string.FileDescription='CE' --version-string.ProductName='ProxiJob' --win32metadata.ProductName='ProxiJob' --win32metadata.CompanyName=\"ProxiJob\"",
 		"package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds-linux",
 		"create-installer-mac": "electron-installer-dmg ./release-builds-mac/ProxiJob-darwin-x64/ProxiJob.app ProxiJob --out=release-builds --overwrite --icon=app/ressources/app-ico.icns --debug",
 		"build-mac": "sudo npm run package-mac && npm run create-installer-mac",
+		"build-win": "npm run package-win",
 		"build": "npm run package-mac && npm run package-win && create-installer-mac"
 	},
-	"author": "",
+	"author": {
+		"name": "Gaël Thomas",
+		"email": "gael.thomas@outlook.fr",
+		"url": "https://www.emploi-store-dev.fr/portail-developpeur-cms/home/challenges/2"
+	},
 	"license": "ISC",
 	"dependencies": {
+		"gulp": "^3.9.1",
 		"jquery": "^3.3.1",
 		"jquery-ui": "^1.12.1",
 		"jquery-ui-dist": "^1.12.1",
 		"js-datepicker": "^2.3.1",
 		"moment": "^2.22.0",
 		"parse": "^1.11.1",
-		"tiny-date-picker": "^3.2.4" 
+		"tiny-date-picker": "^3.2.4"
 	},
 	"devDependencies": {
+		"electron-windows-installer": "^1.7.8",
+		"electron-winstaller": "^2.6.4",
 		"bootstrap": "^4.0.0",
 		"codesign": "0.0.9",
 		"electron": "^1.8.4",
 		"electron-builder": "^20.5.1",
 		"electron-installer-dmg": "^0.2.1",
+		"electron-installer-windows": "^1.0.2",
 		"electron-reload": "^1.2.2",
 		"jquery": "^3.3.1",
 		"parse": "^1.11.1"

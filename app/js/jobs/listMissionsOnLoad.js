@@ -23,7 +23,7 @@ var start = new Moment(d);
 query.find({
         success: function (jobs) {
                 if (jobs.length == 0) {
-                        var html = '<div class="alert-title spacing">Aucune missions à afficher</div>';
+                        var html = '<div class="alert-title spacing">Aucune mission à afficher</div>';
                         $j("#allJobs").addClass("hidden");
                         $j("#missions-listing").append(html);
                 }
