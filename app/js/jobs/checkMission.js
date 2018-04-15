@@ -9,7 +9,7 @@ function checkInputsMission(title, start, end, cost, desc, posTop)
 
         if (title == 0)
                 errorMessage += " Titre incorrect. ";
-        if (cost < "9.76")
+        if (cost < 9.76)
                 errorMessage += " Rémunération brut minimale de 9.76 euros. ";
         if (desc == 0 || desc.lenght < 25)
                 errorMessage += " La description doit faire au moins 25 charactères. ";
