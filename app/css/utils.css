@@ -62,3 +62,7 @@ html {
 .ml-10 {
         margin-left: 10px !important;
 }
+
+.w-96-p {
+        width: 96% !important;
+}

@@ -96,3 +96,15 @@
 .view-box-button {
         text-align: center;
 }
+
+.form-content-edit {
+        top: 10px;
+}
+
+.input-box {
+        padding: 0px 14px 0px 14px;
+}
+
+.spacing {
+        padding-bottom: 10px;
+}

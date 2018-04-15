@@ -62,9 +62,41 @@ function deleteJob(idJob, reload) {
                         });
                 });
                 if (reload) {
-                        setTimeout(function(){
+                        setTimeout(function () {
                                 seeAllJobs(undefined);
                         }, 500);
                 }
         }
+}
+
+function updateJob(idJob) {
+        getMissionById(idJob).then(function (result) {
+                /* Get inputs informations */
+                var title = document.getElementById("mission_title").value;
+                var start = new Date(document.getElementById("mission_start").value);
+                var end = new Date(document.getElementById("mission_end").value);
+                var cost = document.getElementById("mission_cost").value;
+                var desc = document.getElementById("mission_desc").value;
+
+                /* Format date */
+                var startDate = new Moment(start);
+                var endDate = new Moment(end);
+
+                /* Update job */
+                var job = result[0];
+
+                job.set("job", title);
+                job.set("dateStart", startDate.toDate());
+                job.set("dateEnd", endDate.toDate());
+                job.set("price", cost);
+                job.set("description", desc);
+                job.save(null, {
+                        success: function (job) {
+                                seeAllJobs(job.id);
+                        },
+                        error: function (job, error) {
+                                alert('Failed to update object, with error code: ' + error.message);
+                        }
+                });
+        });
 }

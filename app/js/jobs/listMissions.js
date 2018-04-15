@@ -15,7 +15,7 @@ function displayMissionDetails(idMission) {
 
                 getUserByIds(job.attributes.postule).then(function (result) {
                         var users = result;
-                        var html = '<div id="view-'+job.id+'" class="view-box">';
+                        var html = '<div id="view-' + job.id + '" class="view-box">';
 
                         html += '<div class="view-box-elem row">';
                         html += '<div class="col-md-12">';
@@ -70,20 +70,102 @@ function displayMissionDetails(idMission) {
                         html += '<div class="view-box-text">' + dateEnd + '</div>';
                         html += '</div>'
                         html += '</div>'
-
                         html += '<div class="view-box-elem row" style="height: 100px;">';
                         html += '<div class="col-md-6 view-box-button">';
-                        html += '<button class="button button-small blue ml-10" onClick="editJob(\''+job.id+'\');">Modifier</button>';
+                        html += '<button class="button button-small blue ml-10" onClick="displayEditMissionDetails(\'' + job.id + '\');">Modifier</button>';
                         html += '</div>';
                         html += '<div class="col-md-6 view-box-button">';
-                        html += '<button class="button button-small blue ml-10" onClick="deleteJob(\''+job.id+'\', true);return false;">Supprimer</button>';
+                        html += '<button class="button button-small blue ml-10" onClick="deleteJob(\'' + job.id + '\', true);return false;">Supprimer</button>';
                         html += '</div>';
-                        
                         html += '</div>';
-
-
                         html += '</div>';
                         $j("#view-mission-box").html(html);
                 });
+        });
+}
+
+
+/**
+ * Display mission with his id
+ * @param {*} idMission 
+ */
+function displayEditMissionDetails(idMission) {
+        getMissionById(idMission).then(function (result) {
+                var job = result[0];
+                var dateStart = Moment(new Date(job.attributes.dateStart)).format("YYYY-MM-DD");
+                var dateEnd = Moment(new Date(job.attributes.dateEnd)).format("YYYY-MM-DD");
+                var html = '<div id="view-' + job.id + '" class="view-box">';
+
+                html += '<div class="view-box-elem">';
+                html += '<div class="view-box-title spacing">Nom de la mission</div>';
+                html += '<div class="row input input-box">';
+                html += '<input id="mission_title" value="'+job.attributes.job+'" type="text" class="input_text form-content-edit w-96-p" name="input_text" />';
+                html += '</div>';
+                html += '</div>'
+
+                html += '<div class="view-box-elem">';
+                html += '<div class="view-box-title spacing">Descriptif de la mission</div>';
+                html += '<div class="row input input-box">';
+                html += '<textarea id="mission_desc" class="input_text form-content w-96-p" name="input_text" style="height: 100px;">'+job.attributes.description+'</textarea>';
+                html += '</div>';
+                html += '</div>'
+
+                html += '<div class="view-box-elem">';
+                html += '<div class="view-box-title spacing">Rémunération (/h)</div>';
+                html += '<div class="row input input-box">';
+                html += '<input id="mission_cost" type="number" value="'+job.attributes.price+'" class="input_text form-content-edit text-center w-96-p" name="input_text" />';
+                html += '</div>';
+                html += '</div>'
+
+                html += '<div class="view-box-elem row">';
+                html += '<div class="col-md-6">';
+                html += '<div class="view-box-title spacing">Date de début</div>';
+                html += '<input id="mission_start" type="text" value="'+dateStart+'" class="calendar-start input_text form-content-edit text-center w-96-p" name="input_text" />';       
+                html += '</div>'
+                html += '<div class="col-md-6">';
+                html += '<div class="view-box-title spacing">Date de fin</div>';
+                html += '<input id="mission_end" type="text" value="'+dateEnd +'" class="calendar-end input_text form-content-edit text-center w-96-p" name="input_text" />';       
+                html += '</div>'
+                html += '</div>'
+                html += '<div class="view-box-elem row" style="height: 100px;">';
+                html += '<div class="col-md-12 view-box-button">';
+                html += '<button class="button button-small blue ml-10" onClick="updateJob(\'' + job.id + '\');return false;">Valider</button>';
+                html += '</div>';
+                html += '</div>';
+                html += '</div>';
+
+                $j("#view-mission-box").html(html);
+                console.log(Moment(new Date(job.attributes.dateStart)).format("YYYY-MM-DD"));
+                setTimeout(function(){
+                        $(".calendar-start").datepicker({
+                                defaultDate: dateStart,
+                                closeText: 'Fermer',
+                                prevText: 'Précédent',
+                                nextText: 'Suivant',
+                                currentText: 'Aujourd\'hui',
+                                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                                weekHeader: 'Sem.',
+                                dateFormat: 'yy-mm-dd'
+                        });
+                        $(".calendar-end").datepicker({
+                                defaultDate: dateEnd,
+                                closeText: 'Fermer',
+                                prevText: 'Précédent',
+                                nextText: 'Suivant',
+                                currentText: 'Aujourd\'hui',
+                                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                                weekHeader: 'Sem.',
+                                dateFormat: 'yy-mm-dd'
+                        });
+
+                }, 500);
         });
 }
